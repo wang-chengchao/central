@@ -23,10 +23,21 @@ public class CustomerAuthenticationFilter extends AbstractAuthenticationProcessi
       HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
     CustomerAuthenticationToken token = new CustomerAuthenticationToken("admin");
     setDetails(request, token);
+
     return getAuthenticationManager().authenticate(token);
   }
 
   protected void setDetails(HttpServletRequest request, CustomerAuthenticationToken authRequest) {
     authRequest.setDetails(authenticationDetailsSource.buildDetails(request));
+  }
+  
+  protected String obtainUsername(HttpServletRequest request) {
+    
+    return request.getParameter("username");
+  }
+  
+  protected String obtainPassword(HttpServletRequest request) {
+    
+    return request.getParameter("password");
   }
 }
