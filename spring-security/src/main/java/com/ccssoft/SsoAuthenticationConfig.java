@@ -20,16 +20,16 @@ public class SsoAuthenticationConfig
     implements PriorityOrdered {
   
   @Autowired
-  private SsoUserDetailsService customerUserDetailsService;
+  private SsoUserDetailsService ssoUserDetailsService;
 
   @Override
-  public void configure(HttpSecurity http) throws Exception {
+  public void configure(HttpSecurity http) {
     SsoAuthenticationFilter filter = new SsoAuthenticationFilter();
     filter.setAuthenticationManager(http.getSharedObject(AuthenticationManager.class));
     filter.setAuthenticationSuccessHandler(new SimpleUrlAuthenticationSuccessHandler());
     filter.setAuthenticationFailureHandler(new SimpleUrlAuthenticationFailureHandler());
   
-    SsoAuthenticationProvider provider = new SsoAuthenticationProvider(customerUserDetailsService);
+    SsoAuthenticationProvider provider = new SsoAuthenticationProvider(ssoUserDetailsService);
 
     http.authenticationProvider(provider)
         .addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
