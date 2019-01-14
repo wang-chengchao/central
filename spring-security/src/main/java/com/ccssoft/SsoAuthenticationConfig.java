@@ -20,8 +20,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 public class SsoAuthenticationConfig
     extends SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> {
-
-  @Autowired private SsoUserDetailsService customerUserDetailsService;
+  
+  @Autowired
+  private SsoUserDetailsService customerUserDetailsService;
 
   @Override
   public void configure(HttpSecurity http) throws Exception {
@@ -29,7 +30,7 @@ public class SsoAuthenticationConfig
     filter.setAuthenticationManager(http.getSharedObject(AuthenticationManager.class));
     filter.setAuthenticationSuccessHandler(new SimpleUrlAuthenticationSuccessHandler());
     filter.setAuthenticationFailureHandler(new SimpleUrlAuthenticationFailureHandler());
-
+  
     SSoAuthenticationProvider provider =
         new SSoAuthenticationProvider(customerUserDetailsService);
 

@@ -12,13 +12,13 @@ import org.springframework.security.core.GrantedAuthority;
 public class SsoAuthenticationToken extends AbstractAuthenticationToken {
 
   private final Object principal;
-
+  
   public SsoAuthenticationToken(String name) {
     super(null);
     this.principal = name;
     super.setAuthenticated(false);
   }
-
+  
   public SsoAuthenticationToken(
       Object principal, Collection<? extends GrantedAuthority> authorities) {
     super(authorities);

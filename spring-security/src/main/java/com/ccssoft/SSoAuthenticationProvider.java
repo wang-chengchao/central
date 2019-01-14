@@ -12,26 +12,26 @@ import org.springframework.security.core.userdetails.UserDetails;
  * Author Administrator<br>
  */
 public class SSoAuthenticationProvider implements AuthenticationProvider {
-
+  
   private SsoUserDetailsService customerUserDetailsService;
-
+  
   public SSoAuthenticationProvider(SsoUserDetailsService customerUserDetailsService) {
     this.customerUserDetailsService = customerUserDetailsService;
   }
-
+  
   public SsoUserDetailsService getCustomerUserDetailsService() {
     return customerUserDetailsService;
   }
 
   @Override
   public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-
+  
     SsoAuthenticationToken token = (SsoAuthenticationToken) authentication;
   
     UserDetails userDetails =
         customerUserDetailsService.loadUserByUsername((String) token.getPrincipal());
     if (userDetails == null) throw new InternalAuthenticationServiceException("认证失败");
-
+  
     SsoAuthenticationToken auth =
         new SsoAuthenticationToken(userDetails, userDetails.getAuthorities());
     auth.setDetails(token.getDetails());

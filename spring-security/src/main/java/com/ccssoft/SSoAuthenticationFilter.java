@@ -13,7 +13,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
  * Author Administrator<br>
  */
 public class SSoAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
-
+  
   public SSoAuthenticationFilter() {
     super(new AntPathRequestMatcher("/oauth/token", "GET"));
   }
@@ -26,7 +26,7 @@ public class SSoAuthenticationFilter extends AbstractAuthenticationProcessingFil
 
     return getAuthenticationManager().authenticate(token);
   }
-
+  
   protected void setDetails(HttpServletRequest request, SsoAuthenticationToken authRequest) {
     authRequest.setDetails(authenticationDetailsSource.buildDetails(request));
   }
