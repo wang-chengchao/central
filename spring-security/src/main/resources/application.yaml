@@ -1,0 +1,10 @@
+server:
+  port: 9500
+spring:
+  thymeleaf:
+    cache: false
+security:
+  oauth2:
+    client:
+      client-id: merryyou
+      client-secret: merryyou

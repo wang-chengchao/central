@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<form action="to/login" th:method="post" method="post">
+  <label>Name:</label> <input name="username" id="username"></br>
+  <label>Password:</label><input name="password" id="password"></br>
+  <input type="submit" value="Login">
+</form>
+<div>
+  <iframe id="emossNewIframe" src="http://127.0.0.1:8080/cas/login"
+        frameborder="1" width="800" height="800" scrolling="no">
+    
+    
+  </iframe>
+</div>
+</body>
+</html>
