@@ -11,11 +11,11 @@ import org.springframework.security.core.userdetails.UserDetails;
  * Date 2019/1/12 18:39<br>
  * Author Administrator<br>
  */
-public class SSoAuthenticationProvider implements AuthenticationProvider {
+public class SsoAuthenticationProvider implements AuthenticationProvider {
   
   private SsoUserDetailsService customerUserDetailsService;
   
-  public SSoAuthenticationProvider(SsoUserDetailsService customerUserDetailsService) {
+  public SsoAuthenticationProvider(SsoUserDetailsService customerUserDetailsService) {
     this.customerUserDetailsService = customerUserDetailsService;
   }
   

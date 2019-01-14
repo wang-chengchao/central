@@ -12,9 +12,9 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
  * Date 2019/1/12 17:25<br>
  * Author Administrator<br>
  */
-public class SSoAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
+public class SsoAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
   
-  public SSoAuthenticationFilter() {
+  public SsoAuthenticationFilter() {
     super(new AntPathRequestMatcher("/oauth/token", "GET"));
   }
 

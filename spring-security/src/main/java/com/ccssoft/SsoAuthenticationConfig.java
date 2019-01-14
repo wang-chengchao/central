@@ -26,13 +26,13 @@ public class SsoAuthenticationConfig
 
   @Override
   public void configure(HttpSecurity http) throws Exception {
-    SSoAuthenticationFilter filter = new SSoAuthenticationFilter();
+    SsoAuthenticationFilter filter = new SsoAuthenticationFilter();
     filter.setAuthenticationManager(http.getSharedObject(AuthenticationManager.class));
     filter.setAuthenticationSuccessHandler(new SimpleUrlAuthenticationSuccessHandler());
     filter.setAuthenticationFailureHandler(new SimpleUrlAuthenticationFailureHandler());
   
-    SSoAuthenticationProvider provider =
-        new SSoAuthenticationProvider(customerUserDetailsService);
+    SsoAuthenticationProvider provider =
+        new SsoAuthenticationProvider(customerUserDetailsService);
 
     http.authenticationProvider(provider)
         .addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
