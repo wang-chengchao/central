@@ -9,17 +9,17 @@ import org.springframework.security.core.GrantedAuthority;
  * Date 2019/1/12 18:33<br>
  * Author Administrator<br>
  */
-public class CustomerAuthenticationToken extends AbstractAuthenticationToken {
+public class SsoAuthenticationToken extends AbstractAuthenticationToken {
 
   private final Object principal;
 
-  public CustomerAuthenticationToken(String name) {
+  public SsoAuthenticationToken(String name) {
     super(null);
     this.principal = name;
     super.setAuthenticated(false);
   }
 
-  public CustomerAuthenticationToken(
+  public SsoAuthenticationToken(
       Object principal, Collection<? extends GrantedAuthority> authorities) {
     super(authorities);
     this.principal = principal;

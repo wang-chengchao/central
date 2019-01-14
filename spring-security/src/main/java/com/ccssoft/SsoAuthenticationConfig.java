@@ -18,20 +18,20 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
  */
 @Order(1)
 @Configuration
-public class CustomerAuthenticationConfig
+public class SsoAuthenticationConfig
     extends SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> {
 
-  @Autowired private CustomerUserDetailsService customerUserDetailsService;
+  @Autowired private SsoUserDetailsService customerUserDetailsService;
 
   @Override
   public void configure(HttpSecurity http) throws Exception {
-    CustomerAuthenticationFilter filter = new CustomerAuthenticationFilter();
+    SSoAuthenticationFilter filter = new SSoAuthenticationFilter();
     filter.setAuthenticationManager(http.getSharedObject(AuthenticationManager.class));
     filter.setAuthenticationSuccessHandler(new SimpleUrlAuthenticationSuccessHandler());
     filter.setAuthenticationFailureHandler(new SimpleUrlAuthenticationFailureHandler());
 
-    CustomerAuthenticationProvider provider =
-        new CustomerAuthenticationProvider(customerUserDetailsService);
+    SSoAuthenticationProvider provider =
+        new SSoAuthenticationProvider(customerUserDetailsService);
 
     http.authenticationProvider(provider)
         .addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);

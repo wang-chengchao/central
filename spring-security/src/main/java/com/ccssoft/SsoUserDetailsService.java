@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  * Author Administrator<br>
  */
 @Component
-public class CustomerUserDetailsService implements UserDetailsService {
+public class SsoUserDetailsService implements UserDetailsService {
 
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

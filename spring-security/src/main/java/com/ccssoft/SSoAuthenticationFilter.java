@@ -12,22 +12,22 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
  * Date 2019/1/12 17:25<br>
  * Author Administrator<br>
  */
-public class CustomerAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
+public class SSoAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
 
-  public CustomerAuthenticationFilter() {
+  public SSoAuthenticationFilter() {
     super(new AntPathRequestMatcher("/oauth/token", "GET"));
   }
 
   @Override
   public Authentication attemptAuthentication(
       HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
-    CustomerAuthenticationToken token = new CustomerAuthenticationToken("admin");
+    SsoAuthenticationToken token = new SsoAuthenticationToken("admin");
     setDetails(request, token);
 
     return getAuthenticationManager().authenticate(token);
   }
 
-  protected void setDetails(HttpServletRequest request, CustomerAuthenticationToken authRequest) {
+  protected void setDetails(HttpServletRequest request, SsoAuthenticationToken authRequest) {
     authRequest.setDetails(authenticationDetailsSource.buildDetails(request));
   }
   
