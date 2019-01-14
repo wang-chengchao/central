@@ -13,7 +13,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
  * Author Administrator<br>
  */
 public class SsoAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
-  
+
   public SsoAuthenticationFilter() {
     super(new AntPathRequestMatcher("/oauth/token", "GET"));
   }
@@ -21,7 +21,10 @@ public class SsoAuthenticationFilter extends AbstractAuthenticationProcessingFil
   @Override
   public Authentication attemptAuthentication(
       HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
-    SsoAuthenticationToken token = new SsoAuthenticationToken("admin");
+  
+    String username = obtainUsername(request);
+  
+    SsoAuthenticationToken token = new SsoAuthenticationToken(username != null ? username : "");
     setDetails(request, token);
 
     return getAuthenticationManager().authenticate(token);

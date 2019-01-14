@@ -10,7 +10,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
   
-  @Autowired
+  @Autowired(required = false)
   SsoAuthenticationConfig customerAuthenticationConfig;
 
   @Override

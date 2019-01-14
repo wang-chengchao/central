@@ -1,6 +1,7 @@
 package com.ccssoft;
 
 import com.alibaba.fastjson.JSON;
+import com.ccssoft.annotation.EnableSso;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
@@ -23,7 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @SpringBootApplication
 @Controller
 @RequestMapping("/to")
-
+@EnableSso
 public class Application {
 
   static final Logger log = LoggerFactory.getLogger(Application.class);

@@ -17,6 +17,9 @@ public class SsoUserDetailsService implements UserDetailsService {
 
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    if (!"admin".equals(username)) {
+      throw new UsernameNotFoundException("username not found");
+    }
     return new User(
         username, "pwd", AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_USER"));
   }
