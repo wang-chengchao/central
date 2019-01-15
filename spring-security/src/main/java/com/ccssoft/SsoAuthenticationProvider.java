@@ -18,25 +18,27 @@ public class SsoAuthenticationProvider implements AuthenticationProvider {
   public SsoAuthenticationProvider(SsoUserDetailsService customerUserDetailsService) {
     this.customerUserDetailsService = customerUserDetailsService;
   }
-
+  
   public SsoUserDetailsService getCustomerUserDetailsService() {
     return customerUserDetailsService;
   }
 
   @Override
   public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-
+  
     SsoAuthenticationToken token = (SsoAuthenticationToken) authentication;
-
+  
     UserDetails userDetails =
         customerUserDetailsService.loadUserByUsername((String) token.getPrincipal());
-    if (userDetails == null) throw new InternalAuthenticationServiceException("第三方用户认证失败");
+    if (userDetails == null) {
+      throw new InternalAuthenticationServiceException("第三方用户认证失败");
+    }
 
     SsoAuthenticationToken auth =
         new SsoAuthenticationToken(userDetails, userDetails.getAuthorities());
     auth.setThirdUserInfo(token.getThirdUserInfo());
     auth.setDetails(token.getDetails());
-
+  
     return auth;
   }
 
