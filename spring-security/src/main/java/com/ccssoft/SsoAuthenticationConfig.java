@@ -1,6 +1,5 @@
 package com.ccssoft;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
@@ -18,9 +17,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 public class SsoAuthenticationConfig
     extends SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> {
-  
-  @Autowired
-  private SsoUserDetailsService ssoUserDetailsService;
 
   @Override
   public void configure(HttpSecurity http) {
@@ -29,7 +25,7 @@ public class SsoAuthenticationConfig
     filter.setAuthenticationSuccessHandler(new SimpleUrlAuthenticationSuccessHandler());
     filter.setAuthenticationFailureHandler(new SimpleUrlAuthenticationFailureHandler());
   
-    SsoAuthenticationProvider provider = new SsoAuthenticationProvider(ssoUserDetailsService);
+    SsoAuthenticationProvider provider = new SsoAuthenticationProvider(new SsoUserDetailsService());
 
     http.authenticationProvider(provider)
         .addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
