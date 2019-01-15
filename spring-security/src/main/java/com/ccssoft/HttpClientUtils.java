@@ -34,7 +34,7 @@ public class HttpClientUtils {
   public static final Integer MAX_IDLE_TIME_OUT = 60000;
   public static final Integer MAX_CONN = 100;
   
-  public static HttpClient httpClient ;
+  public static HttpClient httpClient;
   
   static {
     MultiThreadedHttpConnectionManager connectionManager = new MultiThreadedHttpConnectionManager();
