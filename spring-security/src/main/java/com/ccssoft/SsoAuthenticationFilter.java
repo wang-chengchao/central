@@ -2,11 +2,14 @@ package com.ccssoft;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import java.util.Collections;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -14,6 +17,7 @@ import org.springframework.security.web.authentication.AbstractAuthenticationPro
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.util.StringUtils;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
 /**
  * <br>
@@ -28,7 +32,7 @@ public class SsoAuthenticationFilter extends AbstractAuthenticationProcessingFil
 
   private static final String ACCESS_TOKEN_CHECKURL =
       "";
-
+  
   private static final String LOGIN_LOGGER_URL = "";
 
   public SsoAuthenticationFilter() {
@@ -46,34 +50,30 @@ public class SsoAuthenticationFilter extends AbstractAuthenticationProcessingFil
     LOGGER.info("access-token=>{}", accessToken);
     String result;
     try {
-      result =
-          restTemplate.getForObject(
-              ACCESS_TOKEN_CHECKURL + "?token=" + accessToken,
-              String.class,
-              Collections.emptyMap());
+      result = verifyAccessToken(accessToken);
       //  调用restful验证token有效性
       LOGGER.info("返回用户信息=>{}", result);
     } catch (Exception e) {
       throw new InternalAuthenticationServiceException(e.getMessage());
     }
-  
+
     JSONObject thirdUserInfo = JSON.parseObject(result);
+    thirdUserInfo.put("accessToken", accessToken);
+
     String username = obtainUsername(thirdUserInfo);
     if (username == null || "".equals(username)) {
       throw new InternalAuthenticationServiceException("access_token验证结果返回的user为空");
     }
-  
+
     SsoAuthenticationToken token = new SsoAuthenticationToken(username, thirdUserInfo);
     setDetails(request, token);
     Authentication authenticated = getAuthenticationManager().authenticate(token);
-  
+
     try {
-      String log =
-          restTemplate.getForObject(
-              LOGIN_LOGGER_URL + "?token=" + accessToken, String.class, Collections.emptyMap());
+      String log = doGetLoginLog(accessToken);
       LOGGER.info("Sso返回登录日志=>{}", log);
     } catch (Exception e) {
-      LOGGER.info("第三方返回登录日志错误,{}", e.getMessage());
+      LOGGER.info("Sso返回登录日志错误,{}", e.getMessage());
     }
     return authenticated;
   }
@@ -90,5 +90,28 @@ public class SsoAuthenticationFilter extends AbstractAuthenticationProcessingFil
   protected String obtainUsername(JSONObject jsonObject) {
     
     return jsonObject.getString("user_name");
+  }
+  
+  private String verifyAccessToken(String token) {
+    HttpHeaders headers = new HttpHeaders();
+    headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
+    HttpEntity<?> entity = new HttpEntity<>(headers);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(ACCESS_TOKEN_CHECKURL);
+    builder.queryParam("token", token);
+    return restTemplate
+        .exchange(builder.build().encode().toUri(), HttpMethod.GET, entity, String.class)
+        .getBody();
+  }
+  
+  private String doGetLoginLog(String token) {
+    HttpHeaders headers = new HttpHeaders();
+    headers.setContentType(MediaType.APPLICATION_JSON);
+    headers.set("Connection", "close");
+    headers.set("Authorization", "bearer " + token);
+    HttpEntity<?> entity = new HttpEntity<>(headers);
+    UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(LOGIN_LOGGER_URL);
+    return restTemplate
+        .exchange(builder.build().encode().toUri(), HttpMethod.GET, entity, String.class)
+        .getBody();
   }
 }

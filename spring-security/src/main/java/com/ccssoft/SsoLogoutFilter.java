@@ -1,7 +1,7 @@
 package com.ccssoft;
 
+import com.alibaba.fastjson.JSONObject;
 import java.io.IOException;
-import java.util.Collections;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.CompositeLogoutHandler;
@@ -29,11 +32,11 @@ import org.springframework.web.filter.GenericFilterBean;
  * Author Administrator<br>
  */
 public class SsoLogoutFilter extends GenericFilterBean {
-  
+
   private static final Logger LOGGER = LoggerFactory.getLogger(SsoLogoutFilter.class);
-  
+
   RestTemplate restTemplate = new RestTemplate();
-  
+
   private RequestMatcher logoutMatcher;
   
   private final LogoutHandler handler;
@@ -41,7 +44,7 @@ public class SsoLogoutFilter extends GenericFilterBean {
   private final LogoutSuccessHandler logoutSuccessHandler;
   
   private static final String LOGOUT_LOGGER_URL = "";
-  
+
   public SsoLogoutFilter() {
     this.logoutMatcher = new AntPathRequestMatcher("/logout");
     SimpleUrlLogoutSuccessHandler simpleUrlLogoutSuccessHandler =
@@ -66,11 +69,12 @@ public class SsoLogoutFilter extends GenericFilterBean {
     Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
     if (requiresLogout(request, authentication)) {
       try {
-        String log =
-            restTemplate.getForObject(LOGOUT_LOGGER_URL, String.class, Collections.emptyMap());
-        LOGGER.info("第三方登出日志=>{}", log);
+        SsoAuthenticationToken token = (SsoAuthenticationToken) authentication;
+        JSONObject thirdUserInfo = token.getThirdUserInfo();
+        String log = doPostLogoutLog(thirdUserInfo);
+        LOGGER.info("Sso登出日志=>{}", log);
       } catch (Exception e) {
-        LOGGER.info("第三方返回登出日志错误=>{}", e.getMessage());
+        LOGGER.info("Sso返回登出日志错误=>{}", e.getMessage());
       }
       this.handler.logout(request, response, authentication);
       this.logoutSuccessHandler.onLogoutSuccess(request, response, authentication);
@@ -86,5 +90,20 @@ public class SsoLogoutFilter extends GenericFilterBean {
   
   public void setLogoutRequestMatcher(RequestMatcher logoutMatcher) {
     this.logoutMatcher = logoutMatcher;
+  }
+  
+  private String doPostLogoutLog(JSONObject thirdUserInfo) {
+    
+    String accessToken = thirdUserInfo.getString("accessToken");
+    String jti = thirdUserInfo.getString("jti");
+    String exp = thirdUserInfo.getString("exp");
+    String body = "{\"jti\":\"" + jti + "\",\"exp\":\"" + exp + "\"}";
+    
+    HttpHeaders headers = new HttpHeaders();
+    headers.setContentType(MediaType.APPLICATION_JSON);
+    headers.set("Authorization", "bearer " + accessToken);
+    headers.set("Connection", "close");
+    HttpEntity<?> entity = new HttpEntity<>(body, headers);
+    return restTemplate.postForEntity(LOGOUT_LOGGER_URL, entity, String.class).getBody();
   }
 }
