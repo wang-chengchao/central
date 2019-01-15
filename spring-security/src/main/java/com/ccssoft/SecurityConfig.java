@@ -1,9 +1,12 @@
 package com.ccssoft;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.Http403ForbiddenEntryPoint;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
@@ -19,7 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .anyRequest()
         .and()
         .authorizeRequests()
-        .antMatchers("/oauth/token/*", "/login", "/user", "/info")
+        .antMatchers("/oauth/token/*", "/login", "/info", "/failure")
         .permitAll()
         .anyRequest()
         .authenticated()
@@ -27,6 +30,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .formLogin()
         .loginPage("/login")
         .defaultSuccessUrl("/index")
+        .and()
+        .logout()
+        .logoutUrl("/logout")
         .and()
         .apply(ssoAuthenticationConfig);
 

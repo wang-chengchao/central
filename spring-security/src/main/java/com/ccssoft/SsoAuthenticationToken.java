@@ -1,5 +1,6 @@
 package com.ccssoft;
 
+import com.alibaba.fastjson.JSONObject;
 import java.util.Collection;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
@@ -13,12 +14,19 @@ public class SsoAuthenticationToken extends AbstractAuthenticationToken {
 
   private final Object principal;
   
-  public SsoAuthenticationToken(String name) {
+  private JSONObject thirdUserInfo;
+  
+  public SsoAuthenticationToken(String name, JSONObject thirdUserInfo) {
     super(null);
     this.principal = name;
+    this.thirdUserInfo = thirdUserInfo;
     super.setAuthenticated(false);
   }
   
+  public JSONObject getThirdUserInfo() {
+    return thirdUserInfo;
+  }
+
   public SsoAuthenticationToken(
       Object principal, Collection<? extends GrantedAuthority> authorities) {
     super(authorities);
@@ -42,7 +50,11 @@ public class SsoAuthenticationToken extends AbstractAuthenticationToken {
           "Cannot set this token to trusted - use constructor which takes a GrantedAuthority list instead");
     super.setAuthenticated(false);
   }
-
+  
+  public void setThirdUserInfo(JSONObject thirdUserInfo) {
+    this.thirdUserInfo = thirdUserInfo;
+  }
+  
   @Override
   public void eraseCredentials() {
     super.eraseCredentials();

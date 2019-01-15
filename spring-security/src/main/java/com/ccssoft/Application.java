@@ -35,10 +35,15 @@ public class Application {
   public Authentication currentUser(Authentication authentication) {
     return authentication;
   }
-  
+
   @GetMapping("/info")
   @ResponseBody
   public Authentication userInfo() {
     return SecurityContextHolder.getContext().getAuthentication();
+  }
+  
+  @RequestMapping("/failure")
+  public String failure() {
+    return "fail";
   }
 }

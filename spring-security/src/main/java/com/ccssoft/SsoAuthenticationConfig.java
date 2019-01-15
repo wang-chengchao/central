@@ -8,6 +8,7 @@ import org.springframework.security.web.DefaultSecurityFilterChain;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.logout.LogoutFilter;
 
 /**
  * <br>
@@ -23,11 +24,13 @@ public class SsoAuthenticationConfig
     SsoAuthenticationFilter filter = new SsoAuthenticationFilter();
     filter.setAuthenticationManager(http.getSharedObject(AuthenticationManager.class));
     filter.setAuthenticationSuccessHandler(new SimpleUrlAuthenticationSuccessHandler());
-    filter.setAuthenticationFailureHandler(new SimpleUrlAuthenticationFailureHandler());
-  
+    filter.setAuthenticationFailureHandler(new SimpleUrlAuthenticationFailureHandler("/failure"));
+
     SsoAuthenticationProvider provider = new SsoAuthenticationProvider(new SsoUserDetailsService());
 
     http.authenticationProvider(provider)
         .addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
+  
+    http.addFilterBefore(new SsoLogoutFilter(), LogoutFilter.class);
   }
 }

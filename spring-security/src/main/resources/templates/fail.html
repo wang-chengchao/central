@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<th>登录失败</th>
+
+<span class="pass-generalError" id="errorMessage"
+      th:text="${session.SPRING_SECURITY_LAST_EXCEPTION.message}"
+      th:unless="${session.SPRING_SECURITY_LAST_EXCEPTION==null}"></span>
+
+</body>
+</html>
