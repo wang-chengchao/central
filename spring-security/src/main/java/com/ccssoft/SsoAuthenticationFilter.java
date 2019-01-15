@@ -56,17 +56,17 @@ public class SsoAuthenticationFilter extends AbstractAuthenticationProcessingFil
     } catch (Exception e) {
       throw new InternalAuthenticationServiceException(e.getMessage());
     }
-
+  
     JSONObject thirdUserInfo = JSON.parseObject(result);
     String username = obtainUsername(thirdUserInfo);
     if (username == null || "".equals(username)) {
       throw new InternalAuthenticationServiceException("access_token验证结果返回的user为空");
     }
-
+  
     SsoAuthenticationToken token = new SsoAuthenticationToken(username, thirdUserInfo);
     setDetails(request, token);
     Authentication authenticated = getAuthenticationManager().authenticate(token);
-
+  
     try {
       String log =
           restTemplate.getForObject(
@@ -81,14 +81,14 @@ public class SsoAuthenticationFilter extends AbstractAuthenticationProcessingFil
   protected void setDetails(HttpServletRequest request, SsoAuthenticationToken authRequest) {
     authRequest.setDetails(authenticationDetailsSource.buildDetails(request));
   }
-
+  
   protected String obtainAccessToken(HttpServletRequest request) {
-
+    
     return request.getParameter("access_token");
   }
-
+  
   protected String obtainUsername(JSONObject jsonObject) {
-
+    
     return jsonObject.getString("user_name");
   }
 }
