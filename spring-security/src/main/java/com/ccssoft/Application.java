@@ -24,7 +24,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @SpringBootApplication
 @Controller
 @RequestMapping("/to")
-@EnableSso
 public class Application {
 
   static final Logger log = LoggerFactory.getLogger(Application.class);
