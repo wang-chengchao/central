@@ -26,14 +26,12 @@ import org.springframework.web.util.UriComponentsBuilder;
  */
 public class SsoAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(SsoAuthenticationFilter.class);
-
   private RestTemplate restTemplate = new RestTemplate();
 
   private static final String ACCESS_TOKEN_CHECKURL =
-      "";
+      "http://sso.gmcc.net:80/sso/oauth/check_token";
   
-  private static final String LOGIN_LOGGER_URL = "";
+  private static final String LOGIN_LOGGER_URL = "http://sso.gmcc.net:80/sso/login/date";
 
   public SsoAuthenticationFilter() {
     super(new AntPathRequestMatcher("/oauth/token", "GET"));
@@ -47,12 +45,12 @@ public class SsoAuthenticationFilter extends AbstractAuthenticationProcessingFil
     if (!StringUtils.hasText(accessToken)) {
       throw new InternalAuthenticationServiceException("认证失败,access_token为空");
     }
-    LOGGER.info("access-token=>{}", accessToken);
+    logger.info("access-token=>" + accessToken);
     String result;
     try {
       result = verifyAccessToken(accessToken);
       //  调用restful验证token有效性
-      LOGGER.info("返回用户信息=>{}", result);
+      logger.info("返回用户信息=>" + result);
     } catch (Exception e) {
       throw new InternalAuthenticationServiceException(e.getMessage());
     }
@@ -71,9 +69,9 @@ public class SsoAuthenticationFilter extends AbstractAuthenticationProcessingFil
 
     try {
       String log = doGetLoginLog(accessToken);
-      LOGGER.info("Sso返回登录日志=>{}", log);
+      logger.info("Sso返回登录日志=>" + log);
     } catch (Exception e) {
-      LOGGER.info("Sso返回登录日志错误,{}", e.getMessage());
+      logger.info("Sso返回登录日志错误=>" + e.getMessage());
     }
     return authenticated;
   }

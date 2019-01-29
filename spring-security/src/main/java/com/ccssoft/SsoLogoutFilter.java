@@ -8,8 +8,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -32,18 +30,16 @@ import org.springframework.web.filter.GenericFilterBean;
  * Author Administrator<br>
  */
 public class SsoLogoutFilter extends GenericFilterBean {
-
-  private static final Logger LOGGER = LoggerFactory.getLogger(SsoLogoutFilter.class);
-
-  RestTemplate restTemplate = new RestTemplate();
+  
+  private RestTemplate restTemplate = new RestTemplate();
 
   private RequestMatcher logoutMatcher;
-  
+
   private final LogoutHandler handler;
-  
+
   private final LogoutSuccessHandler logoutSuccessHandler;
   
-  private static final String LOGOUT_LOGGER_URL = "";
+  private static final String LOGOUT_LOGGER_URL = "http://sso.gmcc.net:80/sso/token/blacklist";
 
   public SsoLogoutFilter() {
     this.logoutMatcher = new AntPathRequestMatcher("/logout");
@@ -72,9 +68,9 @@ public class SsoLogoutFilter extends GenericFilterBean {
         SsoAuthenticationToken token = (SsoAuthenticationToken) authentication;
         JSONObject thirdUserInfo = token.getThirdUserInfo();
         String log = doPostLogoutLog(thirdUserInfo);
-        LOGGER.info("Sso登出日志=>{}", log);
+        logger.info("Sso登出日志=>" + log);
       } catch (Exception e) {
-        LOGGER.info("Sso返回登出日志错误=>{}", e.getMessage());
+        logger.info("Sso返回登出日志错误=>" + e.getMessage());
       }
       this.handler.logout(request, response, authentication);
       this.logoutSuccessHandler.onLogoutSuccess(request, response, authentication);

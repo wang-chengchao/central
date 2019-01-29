@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"/>
   <title>Title</title>
 </head>
 <body>
 
 <form th:action="@{/login}" method="post">
-  <label>Name:</label> <input name="username" id="username"></br>
-  <label>Password:</label><input name="password" id="password"></br>
-  <input type="submit" value="Login">
+  <label>Name:</label> <input name="username" id="username"/><br/>
+  <label>Password:</label><input name="password" id="password"/><br/>
+  <input type="submit" value="Login"/>
 </form>
 <div>
   <iframe id="emossNewIframe"
-          src="http://sso.gmcc.net:80/?client_id=sg_gmcc_net&returnUrl=http://192.168.17.74:9500/oauth/token"
+          src="http://sso.gmcc.net:80/?client_id=sg_gmcc_net&amp;returnUrl=http://192.168.17.74:9500/oauth/token"
           frameborder="1" width="800" height="800" scrolling="no">
   </iframe>
 </div>
