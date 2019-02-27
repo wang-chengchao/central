@@ -1,8 +1,14 @@
+.settings
+.project
+target
+.classpath
 /**/.classpath
 /**/.project
 /**/.settings/
+/**/application-local.yaml
 /**/node_modules/
 /**/target/
+/**/application-my.yaml
 .Ds_store
 .idea
 /**/.Ds_store
