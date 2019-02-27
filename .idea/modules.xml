@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/nio/nio.iml" filepath="$PROJECT_DIR$/nio/nio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-framework-master.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-framework-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-security/spring-security.iml" filepath="$PROJECT_DIR$/spring-security/spring-security.iml" />
     </modules>
   </component>
 </project>
