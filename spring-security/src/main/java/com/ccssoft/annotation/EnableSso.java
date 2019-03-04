@@ -1,6 +1,6 @@
 package com.ccssoft.annotation;
 
-import com.ccssoft.SsoAuthenticationConfig;
+import com.ccssoft.config.SsoAuthenticationConfig;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

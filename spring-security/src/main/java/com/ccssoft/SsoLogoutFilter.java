@@ -30,7 +30,7 @@ import org.springframework.web.filter.GenericFilterBean;
  * Author Administrator<br>
  */
 public class SsoLogoutFilter extends GenericFilterBean {
-  
+
   private RestTemplate restTemplate = new RestTemplate();
 
   private RequestMatcher logoutMatcher;
@@ -38,7 +38,7 @@ public class SsoLogoutFilter extends GenericFilterBean {
   private final LogoutHandler handler;
 
   private final LogoutSuccessHandler logoutSuccessHandler;
-  
+
   private static final String LOGOUT_LOGGER_URL = "http://sso.gmcc.net:80/sso/token/blacklist";
 
   public SsoLogoutFilter() {
@@ -49,17 +49,17 @@ public class SsoLogoutFilter extends GenericFilterBean {
     this.handler = new SecurityContextLogoutHandler();
     this.logoutSuccessHandler = simpleUrlLogoutSuccessHandler;
   }
-  
+
   public SsoLogoutFilter(LogoutSuccessHandler logoutSuccessHandler, LogoutHandler... handlers) {
     this.handler = new CompositeLogoutHandler(handlers);
     Assert.notNull(logoutSuccessHandler, "logoutSuccessHandler cannot be null");
     this.logoutSuccessHandler = logoutSuccessHandler;
   }
-  
+
   @Override
   public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
       throws IOException, ServletException {
-    
+
     HttpServletRequest request = (HttpServletRequest) req;
     HttpServletResponse response = (HttpServletResponse) res;
     Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -78,23 +78,23 @@ public class SsoLogoutFilter extends GenericFilterBean {
     }
     chain.doFilter(req, res);
   }
-  
+
   protected boolean requiresLogout(HttpServletRequest request, Authentication authentication) {
-    
+
     return this.logoutMatcher.matches(request) && authentication instanceof SsoAuthenticationToken;
   }
-  
+
   public void setLogoutRequestMatcher(RequestMatcher logoutMatcher) {
     this.logoutMatcher = logoutMatcher;
   }
-  
+
   private String doPostLogoutLog(JSONObject thirdUserInfo) {
-    
+
     String accessToken = thirdUserInfo.getString("accessToken");
     String jti = thirdUserInfo.getString("jti");
     String exp = thirdUserInfo.getString("exp");
     String body = "{\"jti\":\"" + jti + "\",\"exp\":\"" + exp + "\"}";
-    
+
     HttpHeaders headers = new HttpHeaders();
     headers.setContentType(MediaType.APPLICATION_JSON);
     headers.set("Authorization", "bearer " + accessToken);

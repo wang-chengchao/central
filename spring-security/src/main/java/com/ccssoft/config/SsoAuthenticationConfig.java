@@ -1,5 +1,9 @@
-package com.ccssoft;
+package com.ccssoft.config;
 
+import com.ccssoft.SsoAuthenticationFilter;
+import com.ccssoft.SsoAuthenticationProvider;
+import com.ccssoft.SsoLogoutFilter;
+import com.ccssoft.SsoUserDetailsService;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;

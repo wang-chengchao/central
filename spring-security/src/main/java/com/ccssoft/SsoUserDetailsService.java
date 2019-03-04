@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
  * Date 2019/1/12 18:42<br>
  * Author Administrator<br>
  */
-
 public class SsoUserDetailsService implements UserDetailsService {
 
   @Override

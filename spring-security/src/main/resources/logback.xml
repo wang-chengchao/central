@@ -2,7 +2,7 @@
   <appender name="STASH"
     class="net.logstash.logback.appender.LogstashTcpSocketAppender">
     <encoder
-      class="net.logstash.logback.encoder.LogstashEncoder" />
+      class="net.logstash.logback.encoder.LogstashEncoder"/>
     <destination>localhost:9600</destination>
   </appender>
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
@@ -12,12 +12,12 @@
       <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
     </encoder>
   </appender>
-<!--  <logger name="com.ccssoft" level="INFO" >
-    <appender-ref ref="STASH" />
-  </logger>-->
+  <!--  <logger name="com.ccssoft" level="INFO" >
+      <appender-ref ref="STASH" />
+    </logger>-->
   <root level="INFO">
-    <appender-ref ref="STDOUT" />
-    <appender-ref ref="STASH" />
+    <appender-ref ref="STDOUT"/>
+    <appender-ref ref="STASH"/>
   </root>
 
 </configuration>
