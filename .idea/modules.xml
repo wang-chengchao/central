@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Chatroom/Chatroom/chatroom.iml" filepath="$PROJECT_DIR$/Chatroom/Chatroom/chatroom.iml" />
       <module fileurl="file://$PROJECT_DIR$/nio/nio.iml" filepath="$PROJECT_DIR$/nio/nio.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/org.springframework.spring.iml" filepath="$PROJECT_DIR$/.idea/modules/org.springframework.spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-aop/org.springframework.spring-aop.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-aop/org.springframework.spring-aop.iml" />
@@ -76,6 +77,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/org.springframework.spring.main.iml" filepath="$PROJECT_DIR$/.idea/modules/org.springframework.spring.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/org.springframework.spring.test.iml" filepath="$PROJECT_DIR$/.idea/modules/org.springframework.spring.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-security/spring.iml" filepath="$PROJECT_DIR$/spring-security/spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webservice/webservice.iml" filepath="$PROJECT_DIR$/webservice/webservice.iml" />
     </modules>
   </component>
 </project>

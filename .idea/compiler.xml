@@ -7,10 +7,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="chatroom" />
         <module name="spring" />
+        <module name="webservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="chatroom" target="1.8" />
+      <module name="com.ccssoft.chat.main" target="1.8" />
+      <module name="com.ccssoft.chat.test" target="1.8" />
+      <module name="com.ccssoft.netty.echo.main" target="1.8" />
+      <module name="com.ccssoft.netty.echo.test" target="1.8" />
       <module name="org.springframework.spring-aop.main" target="1.8" />
       <module name="org.springframework.spring-aop.test" target="1.8" />
       <module name="org.springframework.spring-aspects.main" target="1.8" />
@@ -60,11 +67,13 @@
       <module name="org.springframework.spring.main" target="1.8" />
       <module name="org.springframework.spring.test" target="1.8" />
       <module name="spring" target="1.8" />
+      <module name="webservice" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="spring" options="-parameters" />
+      <module name="webservice" options="-parameters" />
     </option>
   </component>
 </project>

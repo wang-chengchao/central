@@ -1,0 +1,4 @@
+smartflow.webservices:
+  sg2pboss: http://192.168.17.36:8101/pboss/services/SG2PBOSSService
+logging:
+  config: classpath:logback-spring.xml
