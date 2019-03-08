@@ -3,9 +3,9 @@ smartflow.webservices:
 logging:
   config: classpath:logback-spring.xml
 server:
-  port: 8889
-spring:
-  cloud:
-    config:
-      discovery:
-        service-id:
+  port: 8080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
