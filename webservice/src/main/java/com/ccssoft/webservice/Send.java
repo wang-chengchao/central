@@ -2,20 +2,11 @@ package com.ccssoft.webservice;
 
 import static org.apache.commons.lang3.StringUtils.substringBetween;
 
-import com.alibaba.fastjson.JSON;
 import com.ccssoft.webservice.model.gen.HandleMessage;
 import com.ccssoft.webservice.model.gen.ObjectFactory;
 import java.io.ByteArrayOutputStream;
-import javax.annotation.PostConstruct;
+import java.nio.charset.Charset;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.axiom.om.OMAbstractFactory;
-import org.apache.axiom.om.OMElement;
-import org.apache.axiom.om.OMFactory;
-import org.apache.axiom.om.OMNamespace;
-import org.apache.axis2.addressing.EndpointReference;
-import org.apache.axis2.client.Options;
-import org.apache.axis2.client.ServiceClient;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.oxm.Marshaller;
 import org.springframework.oxm.Unmarshaller;
@@ -36,22 +27,6 @@ public class Send extends WebServiceGatewaySupport {
 
   @Value("${smartflow.webservices.sg2pboss}")
   private String url;
-
-  ServiceClient client;
-
-  @PostConstruct
-  public void init() {
-    Options options = new Options();
-    options.setTimeOutInMilliSeconds(60000L);
-    String url = this.url;
-    options.setTo(new EndpointReference(url));
-    try {
-      this.client = new ServiceClient();
-      client.setOptions(options);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-  }
 
   public Send() {
     Jaxb2Marshaller jaxb2Marshaller = new Jaxb2Marshaller();
@@ -86,52 +61,18 @@ public class Send extends WebServiceGatewaySupport {
                     "No unmarshaller registered. Check configuration of WebServiceTemplate.");
               ByteArrayOutputStream out = new ByteArrayOutputStream();
               responseWebserviceMsg.writeTo(out);
-              String result = new String(out.toByteArray(), "utf-8");
-              return result;
+              return new String(out.toByteArray(), Charset.forName("UTF-8"));
             });
-    log.info("调用返回-->{}", o);
     String s = substringBetween(o, "<form>", "</form>");
-    log.info("截取form,{}", s);
     return o;
   }
-
-  public HandleMessage prepareInvoke() {
+  
+  protected HandleMessage prepareInvoke() {
     HandleMessage h = new ObjectFactory().createHandleMessage();
     h.setCallerSystem("sg");
     h.setCallerPwd("pw");
     h.setInterfaceType("replyWorkFlow");
     h.setForm(content);
     return h;
-  }
-
-  public String sendByServiceClient() {
-    OMElement omElement = null;
-    try {
-      omElement = client.sendReceive(prepare());
-      log.info("service调用结果==>", JSON.toJSONString(omElement));
-    } catch (Exception e) {
-      log.error("发生错误");
-    }
-    return JSON.toJSONString(omElement);
-  }
-
-  protected OMElement prepare() {
-    OMFactory fac = OMAbstractFactory.getOMFactory();
-    OMNamespace omNs =
-        fac.createOMNamespace("http://service.pboss.js.chinamobile.com/SG2PBOSSService", "");
-    OMElement reqElement = fac.createOMElement("handleMessage", omNs);
-    OMElement callerSystem = fac.createOMElement("callerSystem", omNs);
-    OMElement callerPwd = fac.createOMElement("callerPwd", omNs);
-    OMElement interfaceType = fac.createOMElement("interfaceType", omNs);
-    OMElement form = fac.createOMElement("form", omNs);
-    callerSystem.setText("sg");
-    callerPwd.setText("sg");
-    interfaceType.setText("replyWorkFlow");
-    form.setText(content);
-    reqElement.addChild(callerSystem);
-    reqElement.addChild(callerPwd);
-    reqElement.addChild(interfaceType);
-    reqElement.addChild(form);
-    return reqElement;
   }
 }

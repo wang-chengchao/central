@@ -20,14 +20,6 @@ public class WebserviceApplication {
 
   @GetMapping("/invoke")
   public String invoke() {
-    String s = send.send2Pboss();
-    return s;
+    return send.send2Pboss();
   }
-
-  @GetMapping("/invoke1")
-  public String invoke1() {
-    return send.sendByServiceClient();
-  }
-
- 
 }
