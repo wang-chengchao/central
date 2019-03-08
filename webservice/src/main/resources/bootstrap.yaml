@@ -11,5 +11,5 @@ management:
         include: '*'
 
 user.info:
-  name: 李四
+  name: 王五
   age: 22
