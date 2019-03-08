@@ -89,14 +89,22 @@ public class HandleMessage {
   public void setForm(String form) {
     this.form = form;
   }
-  
+
   @Override
   public String toString() {
-    return "HandleMessage{" +
-        "callerSystem='" + callerSystem + '\'' +
-        ", callerPwd='" + callerPwd + '\'' +
-        ", interfaceType='" + interfaceType + '\'' +
-        ", form='" + form + '\'' +
-        '}';
+    return "HandleMessage{"
+        + "callerSystem='"
+        + callerSystem
+        + '\''
+        + ", callerPwd='"
+        + callerPwd
+        + '\''
+        + ", interfaceType='"
+        + interfaceType
+        + '\''
+        + ", form='"
+        + form
+        + '\''
+        + '}';
   }
 }

@@ -45,9 +45,22 @@
       <change beforePath="$PROJECT_DIR$/Chatroom/Chatroom/target/classes/pers/kanarien/chatroom/web/websocket/WebSocketChildChannelHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/Chatroom/Chatroom/target/classes/pers/kanarien/chatroom/web/websocket/WebSocketChildChannelHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chatroom/Chatroom/target/classes/pers/kanarien/chatroom/web/websocket/WebSocketServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/Chatroom/Chatroom/target/classes/pers/kanarien/chatroom/web/websocket/WebSocketServer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chatroom/Chatroom/target/classes/pers/kanarien/chatroom/web/websocket/WebSocketServerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/Chatroom/Chatroom/target/classes/pers/kanarien/chatroom/web/websocket/WebSocketServerHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webservice/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webservice/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webservice/mvnw.cmd" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/webservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/webservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/Send.java" beforeDir="false" afterPath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/Send.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/WebserviceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/WebserviceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/HandleMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/HandleMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/IsAlive.java" beforeDir="false" afterPath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/IsAlive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/IsAliveResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/IsAliveResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/MessageAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/MessageAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/MessageAdapterResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/MessageAdapterResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/ObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/ObjectFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/ReplyWorkSheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/ReplyWorkSheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/ReplyWorkSheetResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/ReplyWorkSheetResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webservice/src/main/resources/SG2PBOSSService.wsdl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webservice/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/webservice/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webservice/stdout.log" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/spring-security/target/" />
     <ignored path="$PROJECT_DIR$/spring-framework-master/.gradle/" />
@@ -131,6 +144,7 @@
     <ignored path="$PROJECT_DIR$/chat/out/" />
     <ignored path="$PROJECT_DIR$/Chatroom/Chatroom/target/" />
     <ignored path="$PROJECT_DIR$/webservice/target/" />
+    <ignored path="$PROJECT_DIR$/config-server/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,36 +204,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/WebserviceApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="e#642#643#0" expanded="true" />
-                <element signature="e#676#677#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/Send.java">
+        <entry file="file://$PROJECT_DIR$/config-server/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
-              <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="162">
+              <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webservice/pom.xml">
+        <entry file="file://$PROJECT_DIR$/config-server/src/main/java/com/ccssoft/configserver/ConfigServerApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+            <state relative-caret-position="144">
+              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -247,10 +245,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/spring-framework-master/spring-oxm/src/main/java/org/springframework/oxm/jaxb/Jaxb2Marshaller.java" />
-        <option value="$PROJECT_DIR$/spring-framework-master/spring-context/src/main/java/Main.java" />
-        <option value="$PROJECT_DIR$/spring-framework-master/spring-context/src/main/java/org/springframework/context/annotation/ClassPathBeanDefinitionScanner.java" />
-        <option value="$PROJECT_DIR$/spring-framework-master/spring-beans/src/main/java/org/springframework/beans/factory/support/DefaultListableBeanFactory.java" />
         <option value="$PROJECT_DIR$/spring-framework-master/spring-beans/src/main/java/org/springframework/beans/factory/support/AbstractBeanDefinition.java" />
         <option value="$PROJECT_DIR$/spring-framework-master/spring-beans/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/spring-framework-master/spring-beans/src/main/java/org/springframework/beans/factory/support/BeanDefinitionRegistry.java" />
@@ -283,7 +277,6 @@
         <option value="$PROJECT_DIR$/Chatroom/Chatroom/src/main/java/pers/kanarien/chatroom/web/websocket/WebSocketChildChannelHandler.java" />
         <option value="$PROJECT_DIR$/Chatroom/Chatroom/src/main/java/pers/kanarien/chatroom/web/websocket/WebSocketServer.java" />
         <option value="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/HandleMessage.java" />
-        <option value="$PROJECT_DIR$/webservice/src/main/resources/application.yaml" />
         <option value="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/Response.java" />
         <option value="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/Form.java" />
         <option value="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/HandleMessageResponse.java" />
@@ -295,17 +288,22 @@
         <option value="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/HandleMessageResponse.java" />
         <option value="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/HandleMessage.java" />
         <option value="$PROJECT_DIR$/webservice/src/main/resources/logback-spring.xml" />
-        <option value="$PROJECT_DIR$/webservice/pom.xml" />
         <option value="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/Send.java" />
         <option value="$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/WebserviceApplication.java" />
+        <option value="$PROJECT_DIR$/webservice/src/main/resources/bootstrap.yaml" />
+        <option value="$PROJECT_DIR$/webservice/pom.xml" />
+        <option value="$PROJECT_DIR$/config-server/src/main/java/com/ccssoft/configserver/ConfigServerApplication.java" />
+        <option value="$PROJECT_DIR$/config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/webservice/src/main/resources/application.yaml" />
+        <option value="$PROJECT_DIR$/config-server/src/main/resources/application.yaml" />
       </list>
     </option>
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
-    <annotation-enable>false</annotation-enable>
     <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -368,64 +366,14 @@
               <item name="webservice" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="central" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webservice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="central" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webservice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="ccssoft" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="central" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webservice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="ccssoft" type="462c0819:PsiDirectoryNode" />
-              <item name="webservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="central" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webservice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="ccssoft" type="462c0819:PsiDirectoryNode" />
-              <item name="webservice" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="central" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webservice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="ccssoft" type="462c0819:PsiDirectoryNode" />
-              <item name="webservice" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="gen" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -436,14 +384,14 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551955475352" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552034130019" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -473,17 +421,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.WebserviceApplication">
+  <component name="RunManager" selected="Spring Boot.ConfigServerApplication">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProceedingSpringContainer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ccssoft.ProceedingSpringContainer" />
-      <module name="org.springframework.spring-context.main" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -576,9 +516,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="spring" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ccssoft.Application" />
+    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="config-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ccssoft.configserver.ConfigServerApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -681,24 +621,26 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.ProceedingSpringContainer" />
       <item itemvalue="Gradle.spring-framework-master:spring-aop [clean]" />
       <item itemvalue="Gradle.spring-framework-master:spring-core [build]" />
       <item itemvalue="Gradle.spring-framework-master:spring-core [buildDependents]" />
       <item itemvalue="Gradle.spring-framework-master:spring-core [clean]" />
-      <item itemvalue="Spring Boot.Application" />
       <item itemvalue="Spring Boot.WebserviceApplication" />
+      <item itemvalue="Spring Boot.ConfigServerApplication" />
       <item itemvalue="Tomcat Server.Tomcat9.0.16" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ProceedingSpringContainer" />
         <item itemvalue="Gradle.spring-framework-master:spring-core [buildDependents]" />
         <item itemvalue="Gradle.spring-framework-master:spring-core [clean]" />
         <item itemvalue="Gradle.spring-framework-master:spring-core [build]" />
         <item itemvalue="Gradle.spring-framework-master:spring-aop [clean]" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SpringGeneralSettings">
+    <option name="showMultipleContextsPanel" value="false" />
+    <option name="showProfilesPanel" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -738,34 +680,40 @@
       <workItem from="1552010774798" duration="860000" />
       <workItem from="1552012767539" duration="82000" />
       <workItem from="1552012897965" duration="736000" />
+      <workItem from="1552013692326" duration="253000" />
+      <workItem from="1552015635816" duration="5354000" />
+      <workItem from="1552030997129" duration="455000" />
+      <workItem from="1552031516185" duration="68000" />
+      <workItem from="1552031650362" duration="39000" />
+      <workItem from="1552031762777" duration="340000" />
+      <workItem from="1552032599626" duration="1656000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114094000" />
+    <option name="totallyTimeSpent" value="122259000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Web" order="0" side_tool="true" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="4" sideWeight="0.498366" visible="true" weight="0.38199696" />
+      <window_info content_ui="combo" id="Project" order="4" sideWeight="0.498366" visible="true" weight="0.31694403" />
       <window_info id="Structure" order="5" sideWeight="0.501634" side_tool="true" weight="0.3214826" />
       <window_info id="Image Layers" order="6" />
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Tail" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5030257" side_tool="true" weight="0.5964052" />
-      <window_info anchor="bottom" id="Messages" order="2" weight="0.43300653" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5015129" side_tool="true" weight="0.6069079" />
+      <window_info anchor="bottom" id="Messages" order="2" weight="0.5171821" />
       <window_info anchor="bottom" id="Java Enterprise" order="3" show_stripe_button="false" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="4" weight="0.3267974" />
       <window_info anchor="bottom" id="Spring" order="5" show_stripe_button="false" weight="0.3289689" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32843137" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.6764706" />
-      <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.4969743" weight="0.5964052" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.49848714" weight="0.6069079" />
+      <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.4969743" weight="0.59539473" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="12" weight="0.32786885" />
@@ -773,7 +721,7 @@
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Build" order="15" sideWeight="0.49848714" weight="0.47549018" />
       <window_info anchor="bottom" id="Terminal" order="16" weight="0.6151203" />
-      <window_info anchor="bottom" id="Application Servers" order="17" weight="0.53104573" />
+      <window_info anchor="bottom" id="Application Servers" order="17" sideWeight="0.4977307" weight="0.53092784" />
       <window_info anchor="right" id="Maven Projects" order="0" weight="0.22390318" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info anchor="right" id="Gradle" order="2" weight="0.32980332" />
@@ -785,7 +733,7 @@
       <window_info anchor="right" id="Bean Validation" order="8" show_stripe_button="false" weight="0.32980332" />
       <window_info anchor="right" id="Capture Analysis" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
-      <window_info anchor="right" id="Maven" order="11" weight="0.32980332" />
+      <window_info active="true" anchor="right" id="Maven" order="11" visible="true" weight="0.32980332" />
       <window_info anchor="right" id="JSF" order="12" weight="0.32980332" />
       <window_info anchor="right" id="CDI" order="13" />
     </layout>
@@ -854,88 +802,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webservice/target/generated-sources/xjc-a/com/chinamobile/js/pboss/service/sg2pbossservice/ObjectFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="53" column="7" lean-forward="true" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webservice/target/generated-sources/xjc-a/com/chinamobile/js/pboss/service/sg2pbossservice/HandleMessageResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="50" column="14" lean-forward="true" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-oxm/5.1.5.RELEASE/spring-oxm-5.1.5.RELEASE-sources.jar!/org/springframework/oxm/Marshaller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-oxm/5.1.5.RELEASE/spring-oxm-5.1.5.RELEASE-sources.jar!/org/springframework/oxm/mime/MimeMarshaller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/JDK/jdk1.8/src.zip!/javax/xml/bind/JAXBElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="63" column="13" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3-sources.jar!/ch/qos/logback/classic/Logger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="579" selection-start-line="579" selection-end-line="579" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/JDK/jdk1.8/src.zip!/javax/xml/bind/annotation/XmlElementRef.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-906">
-          <caret line="156" column="31" selection-start-line="156" selection-start-column="31" selection-end-line="156" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/JDK/jdk1.8/src.zip!/javax/xml/namespace/QName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3">
-          <caret line="159" column="6" lean-forward="true" selection-start-line="159" selection-start-column="6" selection-end-line="159" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/axis2/axis2-kernel/1.4/axis2-kernel-1.4-sources.jar!/org/apache/axis2/client/OperationClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="179" column="25" selection-start-line="179" selection-start-column="25" selection-end-line="179" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/axis2/axis2-kernel/1.4/axis2-kernel-1.4-sources.jar!/org/apache/axis2/client/ServiceClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="547" column="29" selection-start-line="547" selection-start-column="29" selection-end-line="547" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/Response.java" />
-    <entry file="file://$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/Form.java" />
-    <entry file="file://$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/HandleMessageResponse.java" />
-    <entry file="file://$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/ObjectFactory.java" />
-    <entry file="file://$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/ObjectFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="43" column="7" lean-forward="true" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/HandleMessage.java" />
     <entry file="file://$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/model/gen/IsAliveResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
@@ -1143,13 +1009,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webservice/src/main/resources/application.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spring-framework-master/spring-core/src/main/java/org/springframework/core/SpringProperties.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
@@ -1204,24 +1063,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webservice/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/WebserviceApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#642#643#0" expanded="true" />
-            <element signature="e#676#677#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/ws/spring-ws-core/3.0.6.RELEASE/spring-ws-core-3.0.6.RELEASE-sources.jar!/org/springframework/ws/client/core/support/WebServiceGatewaySupport.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-314">
@@ -1231,11 +1072,147 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/Send.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+        <state relative-caret-position="437">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webservice/src/main/java/com/ccssoft/webservice/WebserviceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#642#643#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-framework-master/spring-beans/src/main/java/overview.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-framework-master/spring-beans/src/main/java/org/springframework/beans/BeanInstantiationException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="125" column="5" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-framework-master/spring-beans/src/main/java/org/springframework/beans/factory/BeanFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="111" column="28" selection-start-line="111" selection-start-column="17" selection-end-line="111" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-framework-master/spring-beans/src/main/java/org/springframework/beans/factory/config/SingletonBeanRegistry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-framework-master/spring-context/src/main/java/org/springframework/context/support/AbstractApplicationContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="793" column="14" selection-start-line="793" selection-start-column="14" selection-end-line="793" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-config-server/2.1.1.RELEASE/spring-cloud-config-server-2.1.1.RELEASE.jar!/org/springframework/cloud/config/server/EnableConfigServer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-config-server/2.1.1.RELEASE/spring-cloud-config-server-2.1.1.RELEASE-sources.jar!/org/springframework/cloud/config/server/config/ConfigServerConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-config-server/2.1.1.RELEASE/spring-cloud-config-server-2.1.1.RELEASE-sources.jar!/org/springframework/cloud/config/server/EnableConfigServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-server/src/test/java/com/ccssoft/configserver/ConfigServerApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-server/src/main/java/com/ccssoft/configserver/ConfigServerApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-actuator-autoconfigure/2.1.3.RELEASE/spring-boot-actuator-autoconfigure-2.1.3.RELEASE-sources.jar!/org/springframework/boot/actuate/autoconfigure/endpoint/web/WebEndpointProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="43" column="38" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="38" />
+          <folding>
+            <element signature="e#2610#2611#0" expanded="true" />
+            <element signature="e#2641#2642#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webservice/src/main/resources/bootstrap.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" lean-forward="true" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webservice/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webservice/src/main/resources/SG2PBOSSService.wsdl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webservice/src/main/resources/application.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-server/src/main/resources/application.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webservice/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="36" lean-forward="true" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-server/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1256,10 +1233,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>chatroom:war</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1313,11 +1292,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>spring</last-edited>
+          <last-edited>webservice</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
