@@ -11,5 +11,5 @@ management:
         include: '*'
 
 user.info:
-  name: 张三
+  name: 李四
   age: 22
