@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:wangChengChao/central.git
+          skip-ssl-validation: true
+server:
+  port: 8888
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
