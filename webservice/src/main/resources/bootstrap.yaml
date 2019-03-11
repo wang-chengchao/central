@@ -1,7 +1,7 @@
 smartflow.webservices:
-  sg2pboss: http://192.168.17.36:8101/pboss/services/SG2PBOSSService
-  sg2bss1: http://10.252.231.131:35000/BSS/services/BSS4BOSSServer
-  sg2bss2: http://10.252.231.198:9346/BSS/services/BSS4BOSSServer
+  sg2pboss: http://localhost
+  sg2bss1: http://localhost
+  sg2bss2: http://localhost
 logging:
   config: classpath:logback-spring.xml
 server:
