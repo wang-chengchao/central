@@ -13,5 +13,5 @@ management:
         include: '*'
 
 user.info:
-  name: 成成
+  name: hello
   age: 22
