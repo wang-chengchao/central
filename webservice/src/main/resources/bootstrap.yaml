@@ -12,6 +12,4 @@ management:
       exposure:
         include: '*'
 
-user.info:
-  name: hello
-  age: 22
+
