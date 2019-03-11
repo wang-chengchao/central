@@ -13,5 +13,5 @@ management:
         include: '*'
 
 user.info:
-  name: 王五
+  name: 成成
   age: 22

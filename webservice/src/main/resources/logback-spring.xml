@@ -32,7 +32,7 @@
   <logger
     name="org.springframework.ws.client.MessageTracing.sent"
     level="trace" additivity="false">
-    <appender-ref ref="STDOUT"/>
+    <appender-ref ref="console"/>
   </logger>
   <logger
     name="org.springframework.ws.client.MessageTracing.received"

@@ -1,4 +1,4 @@
-package com.ccssoft.webservice.entity;
+package com.ccssoft.webservice.entity.bss2bosspersonal;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -13,26 +13,28 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(propOrder = {"deviceBindReq", "sequenceID"})
-@XmlRootElement(name = "deviceBind")
+@XmlRootElement(name = "deviceBind", namespace = "http://bean.unifBoss.iptvbss.newyulong.com")
 public class DeviceBind {
-
-  @XmlElement protected DeviceBindReq deviceBindReq;
-
-  @XmlElement protected String sequenceID;
-
-  public DeviceBindReq getDeviceBindReq() {
+  
+  @XmlElement(name = "deviceBindReq")
+  protected DeviceBindRequest deviceBindReq;
+  
+  @XmlElement
+  protected java.lang.String sequenceID;
+  
+  public DeviceBindRequest getDeviceBindReq() {
     return deviceBindReq;
   }
-
-  public void setDeviceBindReq(DeviceBindReq deviceBindReq) {
+  
+  public void setDeviceBindReq(DeviceBindRequest deviceBindReq) {
     this.deviceBindReq = deviceBindReq;
   }
-
-  public String getSequenceID() {
+  
+  public java.lang.String getSequenceID() {
     return sequenceID;
   }
-
-  public void setSequenceID(String sequenceID) {
+  
+  public void setSequenceID(java.lang.String sequenceID) {
     this.sequenceID = sequenceID;
   }
 }

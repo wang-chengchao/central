@@ -2,7 +2,7 @@ package com.ccssoft.webservice;
 
 import static org.apache.commons.lang3.StringUtils.substringBetween;
 
-import com.ccssoft.webservice.entity.DeviceBind;
+import com.ccssoft.webservice.entity.bss2bosspersonal.DeviceBind;
 import com.ccssoft.webservice.model.gen.HandleMessage;
 import com.ccssoft.webservice.model.gen.ObjectFactory;
 import java.io.ByteArrayOutputStream;
@@ -36,7 +36,7 @@ public class Send extends WebServiceGatewaySupport {
 
     Jaxb2Marshaller jaxb2Marshaller = new Jaxb2Marshaller();
     jaxb2Marshaller.setContextPaths(
-        "com.ccssoft.webservice.model.gen", "com.ccssoft.webservice.entity");
+        "com.ccssoft.webservice.model.gen", "com.ccssoft.webservice.entity.bss2bosspersonal");
     super.setMarshaller(jaxb2Marshaller);
     super.setUnmarshaller(jaxb2Marshaller);
     // this.setInterceptors(new ClientInterceptor[]{new Sg2BssClientInterceptor()});
