@@ -2,6 +2,7 @@ package com.ccssoft.webservice;
 
 import static org.apache.commons.lang3.StringUtils.substringBetween;
 
+import com.ccssoft.webservice.entity.DeviceBind;
 import com.ccssoft.webservice.model.gen.HandleMessage;
 import com.ccssoft.webservice.model.gen.ObjectFactory;
 import java.io.ByteArrayOutputStream;
@@ -27,12 +28,18 @@ public class Send extends WebServiceGatewaySupport {
 
   @Value("${smartflow.webservices.sg2pboss}")
   private String url;
+  
+  @Value("${smartflow.webservices.sg2bss1}")
+  private String url1;
 
   public Send() {
+
     Jaxb2Marshaller jaxb2Marshaller = new Jaxb2Marshaller();
-    jaxb2Marshaller.setContextPaths("com.ccssoft.webservice.model.gen");
+    jaxb2Marshaller.setContextPaths(
+        "com.ccssoft.webservice.model.gen", "com.ccssoft.webservice.entity");
     super.setMarshaller(jaxb2Marshaller);
     super.setUnmarshaller(jaxb2Marshaller);
+    // this.setInterceptors(new ClientInterceptor[]{new Sg2BssClientInterceptor()});
   }
 
   String content =
@@ -74,5 +81,27 @@ public class Send extends WebServiceGatewaySupport {
     h.setInterfaceType("replyWorkFlow");
     h.setForm(content);
     return h;
+  }
+  
+  public String axis(DeviceBind deviceBind) {
+    
+    WebServiceTemplate template = getWebServiceTemplate();
+    return template.sendAndReceive(
+        url1,
+        requestCallBack -> {
+          if (deviceBind != null) {
+            Marshaller marshaller = getMarshaller();
+            if (marshaller == null) {
+              throw new IllegalStateException(
+                  "No marshaller registered. Check configuration of WebServiceTemplate.");
+            }
+            MarshallingUtils.marshal(marshaller, deviceBind, requestCallBack);
+          }
+        },
+        response -> {
+          ByteArrayOutputStream os = new ByteArrayOutputStream();
+          response.writeTo(os);
+          return new String(os.toByteArray(), Charset.forName("UTF-8"));
+        });
   }
 }
