@@ -5,11 +5,10 @@ import com.ccssoft.webservice.entity.bss2bosspersonal.DeviceBindRequest;
 import com.ccssoft.webservice.entity.bss2bosspersonal.ObjectFactory;
 import java.util.UUID;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,11 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Slf4j
 @RefreshScope
+@EnableDiscoveryClient
 public class WebserviceApplication {
-
-  @Autowired
-  @Qualifier("send")
-  Send sender;
 
   @Value("${user.info.name}")
   private String name;
@@ -53,7 +49,7 @@ public class WebserviceApplication {
 
   @GetMapping("/age")
   public String getAge() {
-  
+
     return this.age;
   }
   
@@ -67,6 +63,6 @@ public class WebserviceApplication {
     DeviceBind deviceBind = new DeviceBind();
     deviceBind.setDeviceBindReq(deviceBindReq);
     deviceBind.setSequenceID(UUID.randomUUID().toString());
-    return sender.axis(deviceBind);
+    return "";
   }
 }

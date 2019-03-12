@@ -7,6 +7,9 @@ spring:
         git:
           uri: git@github.com:wangChengChao/conf-repo.git
           skip-ssl-validation: true
+        prefix: /config
+  freemarker:
+    prefer-file-system-access: true
 server:
   port: 8888
 management:
@@ -14,3 +17,11 @@ management:
     web:
       exposure:
         include: '*'
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
