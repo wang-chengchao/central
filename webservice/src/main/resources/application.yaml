@@ -1,1 +1,19 @@
-
+smartflow.webservices:
+  sg2pboss: http://localhost
+  sg2bss1: http://localhost
+  sg2bss2: http://localhost
+logging:
+  config: classpath:logback-spring.xml
+server:
+  port: 8080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+  instance:
+    hostname: webservice

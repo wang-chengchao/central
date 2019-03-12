@@ -1,6 +1,6 @@
 spring:
   application:
-    name: config-server
+    name: config(eureka)-server
   cloud:
     config:
       server:
@@ -8,10 +8,8 @@ spring:
           uri: git@github.com:wangChengChao/conf-repo.git
           skip-ssl-validation: true
         prefix: /config
-  freemarker:
-    prefer-file-system-access: true
 server:
-  port: 8888
+  port: 8761
 management:
   endpoints:
     web:
@@ -21,7 +19,7 @@ eureka:
   instance:
     hostname: localhost
   client:
-    register-with-eureka: true
+    register-with-eureka: false
     fetch-registry: false
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
