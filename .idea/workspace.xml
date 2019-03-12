@@ -834,8 +834,8 @@
       <item itemvalue="Gradle.spring-framework-master:spring-core [buildDependents]" />
       <item itemvalue="Gradle.spring-framework-master:spring-core [clean]" />
       <item itemvalue="Spring Boot.WebserviceApplication" />
-      <item itemvalue="Tomcat Server.Tomcat9.0.16" />
       <item itemvalue="Spring Boot.ConfigServerApplication" />
+      <item itemvalue="Tomcat Server.Tomcat9.0.16" />
     </list>
     <recent_temporary>
       <list>
