@@ -71,7 +71,7 @@
       <version>3.5</version>
     </dependency>
 
-    <!-- <dependency>
+    <dependency>
        <groupId>org.slf4j</groupId>
        <artifactId>slf4j-api</artifactId>
        <version>1.7.25</version>
@@ -80,10 +80,9 @@
        <groupId>ch.qos.logback</groupId>
        <artifactId>logback-classic</artifactId>
        <version>1.2.3</version>
-     </dependency>-->
+     </dependency>
 
-
-    <!-- <dependency>
+    <dependency>
        <groupId>org.apache.ws.commons.axiom</groupId>
        <artifactId>axiom-impl</artifactId>
        <version>1.2.13</version>
@@ -113,7 +112,6 @@
        <artifactId>axis</artifactId>
        <version>1.4</version>
      </dependency>
- -->
   </dependencies>
 
 
