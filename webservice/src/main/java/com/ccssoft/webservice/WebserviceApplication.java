@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
+@EnableEurekaClient
 @RestController
 @Slf4j
 @RefreshScope
-@EnableEurekaClient
 public class WebserviceApplication {
 
   @Value("${user.info.name}")
@@ -31,7 +31,7 @@ public class WebserviceApplication {
   }
 
   @GetMapping("/invoke")
-  public String invoke() throws Exception {
+  public String invoke() {
     // DeviceBindReq deviceBindReq = new DeviceBindReq();
     // deviceBindReq.setDetailParam("param");
     // deviceBindReq.setForcedFlag(1);
