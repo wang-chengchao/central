@@ -1,0 +1,12 @@
+server:
+  port: 8761
+spring:
+  cloud:
+    config:
+      server:
+        composite: #多个配置源，按照配置顺序优先读取前面的配置，相同属性前面的覆盖后面的
+          - type: jdbc
+            sql: SELECT KEY_, VALUE_ FROM PROPERTIES WHERE APPLICATION_=? AND PROFILE_=? AND LABEL_=?
+          - type: git
+            uri: git@github.com:wangChengChao/conf-repo.git
+        prefix: /config

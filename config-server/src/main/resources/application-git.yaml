@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:wangChengChao/conf-repo.git
+          skip-ssl-validation: true
+        prefix: /config
+server:
+  port: 8761
+

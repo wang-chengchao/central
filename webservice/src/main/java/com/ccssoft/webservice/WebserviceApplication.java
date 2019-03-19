@@ -19,12 +19,15 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RefreshScope
 public class WebserviceApplication {
-
-  @Value("${user.info.name}")
+  
+  @Value("${book.name}")
   private String name;
-
-  @Value("${user.info.age}")
-  private String age;
+  
+  @Value("${author.name}")
+  private String custom;
+  
+  @Value("${book.price}")
+  private String price;
 
   public static void main(String[] args) {
     SpringApplication.run(WebserviceApplication.class, args);
@@ -41,18 +44,6 @@ public class WebserviceApplication {
     return "OK";
   }
 
-  @GetMapping("/name")
-  public String getName() {
-
-    return this.name;
-  }
-
-  @GetMapping("/age")
-  public String getAge() {
-
-    return this.age;
-  }
-  
   @GetMapping("/axis")
   public String axis() {
     DeviceBindRequest deviceBindReq = new ObjectFactory().createDeviceBindRequest();
@@ -64,5 +55,10 @@ public class WebserviceApplication {
     deviceBind.setDeviceBindReq(deviceBindReq);
     deviceBind.setSequenceID(UUID.randomUUID().toString());
     return "";
+  }
+  
+  @GetMapping("/name")
+  public String getName() {
+    return this.name + "-" + this.custom + "-" + this.price;
   }
 }

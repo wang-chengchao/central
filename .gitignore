@@ -1,16 +1,26 @@
-.settings
-.project
-target
+HELP.md
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
 .classpath
-/**/.classpath
-/**/.project
-/**/.settings/
-/**/application-local.yaml
-/**/node_modules/
-/**/target/
-/**/application-my.yaml
-.Ds_store
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
 .idea
-/**/.Ds_store
+*.iws
 *.iml
-/.metadata/
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/build/

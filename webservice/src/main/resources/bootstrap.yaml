@@ -1,4 +1,7 @@
+#相同属性：优先读取config server拉取的配置文件，若config server没有，读取本地配置文件
 spring:
   cloud:
     config:
-      uri: http://127.0.0.1:8761/config
+      uri: http://127.0.0.1:8761/config/
+      profile: dev
+      fail-fast: true

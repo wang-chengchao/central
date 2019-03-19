@@ -1,20 +1,13 @@
 spring:
   application:
-    name: config(eureka)-server
-  cloud:
-    config:
-      server:
-        git:
-          uri: git@github.com:wangChengChao/conf-repo.git
-          skip-ssl-validation: true
-        prefix: /config
-server:
-  port: 8761
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
+    name: config-server(eureka)
+  profiles:
+    active: composite
+  datasource:
+    username: kermit
+    password: kermit
+    url: jdbc:oracle:thin:@127.0.0.1:1521:orcl
+    driver-class-name: oracle.jdbc.OracleDriver
 eureka:
   instance:
     hostname: localhost
@@ -23,3 +16,10 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
