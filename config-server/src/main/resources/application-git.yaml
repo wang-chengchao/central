@@ -5,6 +5,7 @@ spring:
         git:
           uri: git@github.com:wangChengChao/conf-repo.git
           skip-ssl-validation: true
+          default-label: master
         prefix: /config
 server:
   port: 8761
