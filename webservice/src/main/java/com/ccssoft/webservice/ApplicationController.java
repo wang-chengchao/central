@@ -20,7 +20,7 @@ public class ApplicationController {
   
   @GetMapping("/business/config")
   public Object config() {
-    
+    log.info("businessConfig,{}", businessConfig);
     return businessConfig;
   }
 }

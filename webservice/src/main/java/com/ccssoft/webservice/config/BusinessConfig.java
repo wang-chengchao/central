@@ -2,7 +2,7 @@ package com.ccssoft.webservice.config;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 
@@ -11,27 +11,15 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
  * Date 2019/3/20 9:51<br>
  * Author Administrator<br>
  */
-@ConfigurationProperties(prefix = "config")
+@ConfigurationProperties(prefix = BusinessConfig.PREFIX)
 @RefreshScope
+@Data
 public class BusinessConfig {
+  
+  public static final String PREFIX = "config";
   
   private Map<String, Object> rollback = new HashMap<>();
   
   private Map<String, String> other = new HashMap<>();
   
-  public Map<String, Object> getRollback() {
-    return rollback;
-  }
-  
-  public void setRollback(Map<String, Object> rollback) {
-    this.rollback = rollback;
-  }
-  
-  public Map<String, String> getOther() {
-    return other;
-  }
-  
-  public void setOther(Map<String, String> other) {
-    this.other = other;
-  }
 }
