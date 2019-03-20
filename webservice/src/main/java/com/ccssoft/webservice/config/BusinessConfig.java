@@ -1,5 +1,6 @@
 package com.ccssoft.webservice.config;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -14,9 +15,9 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 @RefreshScope
 public class BusinessConfig {
   
-  private Map<String, Object> rollback = new ConcurrentHashMap<>();
+  private Map<String, Object> rollback = new HashMap<>();
   
-  private Map<String, String> other = new ConcurrentHashMap<>();
+  private Map<String, String> other = new HashMap<>();
   
   public Map<String, Object> getRollback() {
     return rollback;
