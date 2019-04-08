@@ -5,6 +5,7 @@ import com.ccssoft.webservice.entity.bss2bosspersonal.DeviceBind;
 import com.ccssoft.webservice.entity.bss2bosspersonal.DeviceBindRequest;
 import com.ccssoft.webservice.entity.bss2bosspersonal.ObjectFactory;
 import java.util.UUID;
+import javax.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -23,14 +24,17 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableConfigurationProperties({BusinessConfig.class})
 public class WebserviceApplication {
   
-  @Value("${book.name}")
+  @Value("${book.name:book}")
   private String name;
   
-  @Value("${author.name}")
+  @Value("${author.name:name}")
   private String custom;
   
-  @Value("${book.price}")
+  @Value("${book.price:price}")
   private String price;
+  
+  @Resource
+  Sg2PbossWebServiceClient client;
 
   public static void main(String[] args) {
     SpringApplication.run(WebserviceApplication.class, args);
@@ -38,12 +42,7 @@ public class WebserviceApplication {
 
   @GetMapping("/invoke")
   public String invoke() {
-    // DeviceBindReq deviceBindReq = new DeviceBindReq();
-    // deviceBindReq.setDetailParam("param");
-    // deviceBindReq.setForcedFlag(1);
-    // deviceBindReq.setMAC("fff-11");
-    // deviceBindReq.setUserID("ID");
-    // send.callDeviceBind(deviceBindReq, "aaaaaaaaaa");
+ client.sendRequest();
     return "OK";
   }
 
