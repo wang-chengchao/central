@@ -1,3 +1,5 @@
+const a = 1;
+console.log("a", a);
 const angular = require('angular');
 let ngModule = angular.module('tasklist.plugin.sample-plugin', []);
 ngModule.config([

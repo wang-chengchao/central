@@ -9,7 +9,8 @@ module.exports = function (grunt) {
             main: {
                 files: {
                     'src/main/resources/plugin-webapp/sample-plugin/app/dist/bundle.js': [
-                        'src/main/resources/plugin-webapp/sample-plugin/app/plugin.js'
+                        'src/main/resources/plugin-webapp/sample-plugin/app/plugin.js',
+                      'src/main/resources/plugin-webapp/sample-plugin/app/plugin1.js'
                     ]
                 },
                 options: {
