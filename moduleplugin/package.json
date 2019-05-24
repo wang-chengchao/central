@@ -1,0 +1,21 @@
+{
+  "name": "tasklist-sample-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "babelify": "^9.0.0",
+    "brfs": "^1.6.1",
+    "grunt": "^1.0.2",
+    "grunt-browserify": "^5.3.0",
+    "grunt-contrib-less": "^2.0.0",
+    "load-grunt-tasks": "^4.0.0"
+  }
+}

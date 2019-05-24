@@ -1,0 +1,21 @@
+<form class="form-horizontal">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">类型</label>
+        <div class="col-sm-4">
+            <select class="form-control" cam-variable-name="type"
+                cam-variable-type="String">  
+              <option disabled selected value> -- select an option -- </option>
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="opel">Opel</option>
+              <option value="audi">Audi</option>
+            </select>
+        </div>
+        <label class="col-sm-2 control-label">名称</label>
+        <div class="col-sm-4">
+            <input type="text" required class="form-control"
+                    placeholder="" cam-variable-name="name"
+                    cam-variable-type="String"/>
+        </div>
+    </div>
+</form>

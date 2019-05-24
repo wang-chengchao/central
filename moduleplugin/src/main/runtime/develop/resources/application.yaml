@@ -1,0 +1,6 @@
+server.port: 28080
+camunda.bpm:
+  admin-user:
+    id: demo
+    password: demo
+    firstName: Demo
