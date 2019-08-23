@@ -1,0 +1,9 @@
+server:
+  port: 8888
+
+
+student:
+  sno: 10000
+  teacher:
+    name: 李四
+    gender: 男
