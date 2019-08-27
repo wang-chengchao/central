@@ -1,7 +1,8 @@
 server:
   port: 8888
 
-
+apollo:
+  meta: http://localhost:8080/
 student:
   sno: 10000
   teacher:
