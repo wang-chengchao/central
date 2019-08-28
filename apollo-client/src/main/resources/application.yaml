@@ -1,10 +1,20 @@
 server:
   port: 8888
-
+apollo.bootstrap.enabled: true
+apollo.bootstrap.namespaces: application,application.yaml
 apollo:
   meta: http://localhost:8080/
-student:
-  sno: 10000
-  teacher:
-    name: 李四
-    gender: 男
+management:
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+#student:
+#  sno: 10000
+#  teacher:
+#    name: 李四
+#    gender: 男

@@ -10,6 +10,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Data
 @ConfigurationProperties(prefix = Student.DEFAULT_PREFIX)
 public class Student {
+  
 
   public static final String DEFAULT_PREFIX = "student";
   private int sno;
