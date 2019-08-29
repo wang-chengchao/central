@@ -43,7 +43,13 @@
     <dependency>
       <groupId>com.ctrip.framework.apollo</groupId>
       <artifactId>apollo-client</artifactId>
-      <version>1.1.0</version>
+      <version>RELEASE</version>
+    </dependency>
+    <!--for refresh-->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-context</artifactId>
+      <version>2.1.1.RELEASE</version>
     </dependency>
   </dependencies>
 </project>
