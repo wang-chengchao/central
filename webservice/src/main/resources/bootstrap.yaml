@@ -5,3 +5,4 @@ spring:
       uri: http://127.0.0.1:8761/config/
       profile: dev
       fail-fast: false
+      enabled: false
